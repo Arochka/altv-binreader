@@ -83,15 +83,5 @@ namespace BinReader
 
             return modType;
         }
-
-        public T DeserializeToObject<T>(string filepath) where T : class
-        {
-            System.Xml.Serialization.XmlSerializer ser = new System.Xml.Serialization.XmlSerializer(typeof(T));
-
-            using (StreamReader sr = new StreamReader(filepath))
-            {
-                return (T)ser.Deserialize(sr);
-            }
-        }
     }
 }
